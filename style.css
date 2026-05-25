@@ -363,6 +363,11 @@ i {
         max-width: 60px;
     }
 }
+@media (max-width: 1990px) {
+    .logo_footer {
+        max-width: 320px;
+    }
+}
 
 /* Celular pequeño */
 @media (max-width: 360px) {
@@ -387,9 +392,16 @@ i {
 
 
 /* RESPONSIVE */
-@media(max-width:1024px){
+@media(max-width:1238px){
   .grid{
-    grid-template-columns:repeat(3,1fr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+  }
+  .categoria{
+    width: 100%;
   }
   .product-grid{
     grid-template-columns:repeat(3,1fr);
@@ -1000,7 +1012,7 @@ body{
 
     .footer_container{
 
-        grid-template-columns:repeat(2,1fr);
+
     }
 
 }
