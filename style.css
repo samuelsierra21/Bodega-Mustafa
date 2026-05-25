@@ -320,6 +320,13 @@ i {
   transform: scale(1.05);
 }
 
+
+.contenedor-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
 @media (max-width: 768px) {
   .circle {
     width: 30vw;
@@ -592,6 +599,11 @@ i {
     contain: paint;
 }
 /* SECCION CONTENEDOR DE ITEMS */
+.contenedor-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 .contenedor .contenedor-items{
     margin-top: 50px;
     display: grid;
@@ -656,7 +668,7 @@ i {
     text-align: center;
     font-weight: bold;
     font-size: 22px;
-}git add .
+}
 .contenedor .contenedor-items .item .boton-item{
     display: block;
     margin: 10px auto;
