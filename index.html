@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" rel="stylesheet">
-  <script src="app.js" async></script>
+  <script src="script.js" async></script>
 </head>
 
 <body>
@@ -27,7 +27,8 @@
 
       <div class="search">
         <input class="search_style" type="text" placeholder="Buscar productos...">
-        <button><img src="IMG/simbolo-de-la-interfaz-de-busqueda.png" alt="" class="lupa"></button>
+        <button class="search_button"><img src="IMG/simbolo-de-la-interfaz-de-busqueda.png" alt=""
+            class="lupa"></button>
       </div>
 
       <div class="social">
@@ -37,7 +38,22 @@
         <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
+
+      <div class="cart-header">
+
+        <a href="carrito.html">
+          <button class="cart-toggle">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span class="cart-count">0</span>
+
+          </button>
+        </a>
+
+      </div>
     </div>
+
 
   </div>
 
@@ -210,11 +226,12 @@
     <!-- Contenedor de elementos -->
 
     <div class="contenedor-items">
-      
+
       <div class="item">
         <img src="IMG/C_MONTABLES/TR1701.jpg" alt="" class="cards_img">
         <div class="content_titul_item">
-          <span class="titulo-item">TR1701 - Camioneta Prinsel 12v Eléctrica 1 Asiento Niños 2-4 Años Rojo Montable </span>
+          <span class="titulo-item">TR1701 - Camioneta Prinsel 12v Eléctrica 1 Asiento Niños 2-4 Años Rojo Montable
+          </span>
         </div>
         <div class="content_precio_item">
           <span class="precio-item">$600.000 </span>
@@ -249,7 +266,7 @@
 
 
 
-      
+
     </div>
 
 
@@ -270,7 +287,6 @@
         <div class="fila">
           <strong>Tu Total</strong>
           <span class="carrito-precio-total">
-            $120.000,00
           </span>
         </div>
         <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
