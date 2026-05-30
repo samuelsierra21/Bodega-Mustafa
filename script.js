@@ -1,3 +1,42 @@
+function cargarProductos(){
+
+    const contenedor =
+    document.getElementById("contenedor-productos");
+
+    productos.forEach(producto=>{
+
+        contenedor.innerHTML += `
+
+        <div class="item">
+
+            <img src="${producto.imagen}"
+                 class="cards_img">
+
+            <div class="content_titul_item">
+                <span class="titulo-item">
+                    ${producto.nombre}
+                </span>
+            </div>
+
+            <div class="content_precio_item">
+                <span class="precio-item">
+                    ${producto.precio}
+                </span>
+            </div>
+
+            <button class="boton-item">
+                Agregar al Carrito
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
 //Variable que mantiene el estado visible del carrito
 var carritoVisible = false;
 
@@ -9,6 +48,7 @@ if(document.readyState == 'loading'){
 }
 
 function ready(){
+    cargarProductos();
     
     //Agregremos funcionalidad a los botones eliminar del carrito
     var botonesEliminarItem = document.getElementsByClassName('btn-eliminar');
@@ -78,6 +118,9 @@ function agregarAlCarritoClicked(event){
     agregarItemAlCarrito(titulo, precio, imagenSrc);
 
     hacerVisibleCarrito();
+    document.getElementById("carrito").scrollIntoView({
+    behavior: "smooth"
+});
 }
 
 //Funcion que hace visible el carrito
@@ -94,7 +137,7 @@ function hacerVisibleCarrito(){
 //Funciòn que agrega un item al carrito
 function agregarItemAlCarrito(titulo, precio, imagenSrc){
     var item = document.createElement('div');
-    item.classList.add = ('item');
+item.classList.add('item');
     var itemsCarrito = document.getElementsByClassName('carrito-items')[0];
 
     //controlamos que el item que intenta ingresar no se encuentre en el carrito
