@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
 
 
 </head>
@@ -189,8 +190,8 @@ WHATSAPP FLOTANTE
 
 <div class="whatsapp-fixed">
 
-  <button class="btn-whatsapp"
-    onclick="window.open('https://wa.me/573018417711','_blank')">
+  <button class="btn-whatsapp" onclick="abrirWhatsapp()"
+    onclick="window.open('https://wa.me/573024925902?text=%F0%9F%91%8B%20%C2%A1Hola!%20Bienvenido%20a%20Bodega%20Mustafa.%0A%0AEstoy%20aqu%C3%AD%20para%20ayudarte%20a%20encontrar%20el%20producto%20que%20buscas,%20resolver%20dudas%20sobre%20precios,%20disponibilidad,%20colores%20y%20env%C3%ADos.%0A%0A%F0%9F%9B%92%20%C2%BFQu%C3%A9%20producto%20te%20interesa%20hoy%3F','_blank')">
 
     <img src="IMG/PRODUCTOS/C_MONTABLES/whatsapp-removebg-preview.png" alt="WhatsApp" class="whatsapp_float">
    
@@ -384,6 +385,29 @@ WHATSAPP FLOTANTE
     </div>
 
   </footer>
+  //carrito vacio
+  <div id="modalVacio" class="modal-vacio">
+
+  <div class="modal-box">
+
+    <div class="modal-icon">
+      🛒
+    </div>
+
+    <h2>Tu carrito está vacío</h2>
+
+    <p>
+      Agrega al menos un producto antes de realizar tu pedido.
+    </p>
+
+    <button onclick="cerrarModal()">
+      Entendido
+    </button>
+
+  </div>
+
+</div>
+
 <script src="productos.js"></script>
 <script src="script.js"></script>
 </body>

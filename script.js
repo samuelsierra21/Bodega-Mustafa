@@ -86,6 +86,16 @@ function pagarClicked(){
 
     var carritoItems = document.getElementsByClassName('carrito-item');
 
+    if(carritoItems.length === 0){
+    abrirModal();
+    return;
+}
+
+    //if(carritoItems.length === 0){
+    //alert("Agrega al menos un producto al carrito");
+    //return;
+//}
+
     let mensaje = "🛒 Pedido:\n\n";
 
     for(var i=0; i<carritoItems.length; i++){
@@ -94,10 +104,13 @@ function pagarClicked(){
         var titulo = item.getElementsByClassName('carrito-item-titulo')[0].innerText;
         var precio = item.getElementsByClassName('carrito-item-precio')[0].innerText;
         var cantidad = item.getElementsByClassName('carrito-item-cantidad')[0].value;
+        
+        var imagen = item.getElementsByClassName('carrito-item-imagen')[0].value;
 
         mensaje += "📦 " + titulo + "\n";
         mensaje += "Cantidad: " + cantidad + "\n";
-        mensaje += "Precio: " + precio + "\n\n";
+        mensaje += "Precio: " + precio + "\n";
+        mensaje += "📷 Foto: " + imagen + "\n\n";
     }
 
     var numero = "573024925902"; // SIN +
@@ -152,6 +165,7 @@ item.classList.add('item');
     var itemCarritoContenido = `
         <div class="carrito-item">
             <img src="${imagenSrc}" width="80px" alt="">
+            <input type="hidden" class="carrito-item-imagen" value="${imagenSrc}">
             <div class="carrito-item-detalles">
                 <span class="carrito-item-titulo">${titulo}</span>
                 <div class="selector-cantidad">
@@ -253,4 +267,29 @@ function actualizarTotalCarrito(){
 
 }
 
+//CARRITO VACÍO
+function abrirModal(){
+    document.getElementById("modalVacio").style.display = "flex";
+}
 
+function cerrarModal(){
+    document.getElementById("modalVacio").style.display = "none";
+}
+
+//FUNCION PARA MENSAJE DE ATENCIOn EN WHATSAPP
+function abrirWhatsapp(){
+
+const mensaje = `Hola. Bienvenido a Bodega Mustafa.
+
+Estoy interesado en recibir información sobre productos y precios.`;
+
+    const numero = "573024925902";
+
+    const url =
+    "https://wa.me/" +
+    numero +
+    "?text=" +
+    encodeURIComponent(mensaje);
+
+    window.open(url, "_blank");
+}
